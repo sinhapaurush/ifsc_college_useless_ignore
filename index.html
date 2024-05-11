@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IFSC Code Finder</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>IFSC Code Finder</h1>
+    <div>
+      <form action="ifsc_finder.php" method="post">
+        <label for="ifsc_code">Enter IFSC Code:</label><br />
+        <input
+          type="text"
+          id="ifsc_code"
+          name="ifsc_code"
+          required
+        /><br /><br />
+        <input type="submit" value="Search" />
+      </form>
+      <a href="add_ifsc.html" style="width: 100px"><button>New IFSC</button></a>
+    </div>
+  </body>
+</html>

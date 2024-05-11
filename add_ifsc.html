@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add IFSC Record</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Add IFSC Record</h1>
+    <form action="add_record.php" method="post">
+        <label for="ifsc_code">IFSC Code:</label><br>
+        <input type="text" id="ifsc_code" name="ifsc_code" required><br><br>
+        <label for="bank_name">Bank Name:</label><br>
+        <input type="text" id="bank_name" name="bank_name" required><br><br>
+        <label for="branch">Branch:</label><br>
+        <input type="text" id="branch" name="branch" required><br><br>
+        <label for="address">Address:</label><br>
+        <input type="text" id="address" name="address" required><br><br>
+        <label for="city">City:</label><br>
+        <input type="text" id="city" name="city" required><br><br>
+        <label for="state">State:</label><br>
+        <input type="text" id="state" name="state" required><br><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
