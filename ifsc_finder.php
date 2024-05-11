@@ -1,9 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IFSC Code Finder</title>
     <style>
         body {
@@ -84,31 +80,22 @@
 <body>
     <h1>IFSC Code Finder</h1>
     <?php
-    // Check if IFSC code is submitted
     if (isset($_POST['ifsc_code'])) {
         $ifsc_code = $_POST['ifsc_code'];
-
-        // Connect to MySQL database (replace with your database credentials)
         $servername = "localhost";
         $username = "root";
         $password = "";
         $dbname = "ifsc";
-
         $conn = new mysqli($servername, $username, $password, $dbname);
 
-        // Check connection
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
         }
-
-        // Prepare SQL statement to fetch bank details
         $sql = "SELECT * FROM bank_details WHERE ifsc_code = '$ifsc_code'";
         $result = $conn->query($sql);
 
-        // Check if result is found
         if ($result->num_rows > 0) {
             $row = $result->fetch_assoc();
-            // Display bank details
             echo "<h2>Bank Details for IFSC Code: $ifsc_code</h2>";
             echo "<p><strong>Bank Name:</strong> " . $row['bank_name'] . "</p>";
             echo "<p><strong>Branch:</strong> " . $row['branch'] . "</p>";
@@ -120,7 +107,6 @@
             echo "<p>Error: Bank details not found for IFSC code: $ifsc_code</p>";
         }
 
-        // Close database connection
         $conn->close();
     }
     ?>
